@@ -1,0 +1,23 @@
+{
+  "movie1": {
+    "title": "Clueless",
+    "genre": "comedy",
+    "imageUrl": "https://www.nowplayingnashville.com/wp-content/uploads/sites/www.nowplayingnashville.com/images/2016/02/htc.png",
+    "movieRatingId":"R",
+    "id": "1111"
+  },
+  "movie2": {
+    "title": "Dark Knight",
+    "genre": "drama",
+    "imageUrl": "https://www.nowplayingnashville.com/wp-content/uploads/sites/www.nowplayingnashville.com/images/2016/02/htc.png",
+    "movieRatingId":"R",
+    "id": "11223"
+  },
+  "movie3": {
+    "title": "The Greatest Showman",
+    "genre": "drama",
+    "imageUrl": "https://www.nowplayingnashville.com/wp-content/uploads/sites/www.nowplayingnashville.com/images/2016/02/htc.png",
+    "movieRatingId":"pG-13",
+    "id": "11344"
+  }
+}
