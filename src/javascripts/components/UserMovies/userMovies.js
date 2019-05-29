@@ -14,7 +14,6 @@ const createNewMovie = (e) => {
   userMovieData.addNewMovie(newMovie)
     .then(() => {
       document.getElementById('name').value = '';
-      document.getElementById('email').value = '';
       document.getElementById('movies').classList.remove('hide');
       document.getElementById('new-movie').classList.add('hide');
     })
