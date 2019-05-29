@@ -12,7 +12,8 @@ const getMovieByUid = uid => new Promise((resolve, reject) => {
         movieResults[movieId].id = movieId;
         moviesArray.push(movieResults[movieId]);
       });
-      resolve(moviesArray[0]);
+      console.error('....', movieResults);
+      resolve(moviesArray);
     })
     .catch(err => reject(err));
 });
