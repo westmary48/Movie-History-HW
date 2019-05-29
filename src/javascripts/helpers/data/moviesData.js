@@ -3,8 +3,8 @@ import apiKeys from '../apiKeys.json';
 
 const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
 
-const getMovieByUid = uid => new Promise((resolve, reject) => {
-  axios.get(`${firebaseUrl}/movies.json?orderBy="uid"&equalTo="${uid}"`)
+const getMovieByUid = () => new Promise((resolve, reject) => {
+  axios.get(`${firebaseUrl}/movies.json`)
     .then((results) => {
       const movieResults = results.data;
       const moviesArray = [];
