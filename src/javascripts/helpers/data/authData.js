@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import movies from '../../components/Movies/movies';
+import userMovies from '../../components/UserMovies/userMovies';
 
 const authDiv = document.getElementById('auth');
 const moviesDiv = document.getElementById('movies');
@@ -18,6 +19,7 @@ const checkLoginStatus = () => {
       authNavbar.classList.add('hide');
       logoutNavbar.classList.remove('hide');
       movies.moviePrint(user.uid);
+      userMovies.showMovies();
     } else {
       authDiv.classList.remove('hide');
       moviesDiv.classList.add('hide');

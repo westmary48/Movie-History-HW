@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 
 import './styles/main.scss';
+import 'bootstrap';
 import auth from './components/Auth/auth';
 // import movies from './components/Movies/movies';
 import authData from './helpers/data/authData';

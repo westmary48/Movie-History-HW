@@ -4,6 +4,6 @@ import apiKeys from '../apiKeys.json';
 
 const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
 
-const addNewMovie = movieObject => axios.post(`${firebaseUrl}/movies.json`, movieObject);
+const addNewMovie = movieObject => axios.post(`${firebaseUrl}/userMovie.json`, movieObject);
 
 export default { addNewMovie };
