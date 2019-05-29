@@ -29,10 +29,19 @@
     </nav>
   </div>
   <div id = "auth"></div>
-  <div id = "movies" class="hide"></div>
-  <div id="role" class="hide">
+  <button id = "add-movies-button" class = "btn btn-info">Add Movie</button>
+  <div id = "movies" class="hide">
     <div id="movieRolePeople"></div>
     <div id="userMovie"></div>
-    <div id="people"></div>
+  </div>
+  <div id="new-movie" class="hide">
+    <form class="col-6 offset-3">
+      <div class="form-group">
+        <label for="name">Movie</label>
+        <input type="text" class="form-control" id="name" placeholder=" Enter Movie">
+      </div>
+      <button type="submit" id="saveNewMovie" class="btn btn-primary">Add Movie</button>
+    </form>
+  </div>
 </body>
 </html>
