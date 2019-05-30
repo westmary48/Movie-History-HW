@@ -4,7 +4,7 @@ import 'firebase/auth';
 import moviesData from '../../helpers/data/moviesData';
 
 import util from '../../helpers/util';
-// import movies from '../Movies/movies';
+import movies from '../Movies/movies';
 
 const createNewMovie = (e) => {
   e.preventDefault();
@@ -17,7 +17,7 @@ const createNewMovie = (e) => {
       document.getElementById('name').value = '';
       document.getElementById('movies').classList.remove('hide');
       document.getElementById('new-movie').classList.add('hide');
-      // movies.moviePrint(newMovie);
+      movies.moviePrint(newMovie);
     })
     .catch(err => console.error('no new movie for you', err));
 };
