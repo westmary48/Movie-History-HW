@@ -7,3 +7,11 @@ body {
 .hide {
   display: none;
 }
+
+.card-img-top {
+  display: flex;
+  width: 400px;
+  height: 300px;
+  justify-content: center;
+}
+

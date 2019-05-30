@@ -1,9 +1,10 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-import userMovieData from '../../helpers/data/userMovieData';
+import moviesData from '../../helpers/data/moviesData';
 
 import util from '../../helpers/util';
+// import movies from '../Movies/movies';
 
 const createNewMovie = (e) => {
   e.preventDefault();
@@ -11,11 +12,12 @@ const createNewMovie = (e) => {
     name: document.getElementById('name').value,
     uid: firebase.auth().currentUser.uid,
   };
-  userMovieData.addNewMovie(newMovie)
+  moviesData.addNewMovie(newMovie)
     .then(() => {
       document.getElementById('name').value = '';
       document.getElementById('movies').classList.remove('hide');
       document.getElementById('new-movie').classList.add('hide');
+      // movies.moviePrint(newMovie);
     })
     .catch(err => console.error('no new movie for you', err));
 };
