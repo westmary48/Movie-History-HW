@@ -4,6 +4,12 @@ import $ from 'jquery';
 
 import watchListData from '../../helpers/data/watchListData';
 import movies from '../Movies/movies';
+// import util from '../../helpers/util';
+
+// const watchListBuilder = () => {
+//   const domstring = '<div>Watchlist</div>';
+//   util.printToDom(domstring, 'userMovies');
+// };
 
 
 // function that adds watchlist to user movies collection and
