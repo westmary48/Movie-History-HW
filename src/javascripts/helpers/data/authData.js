@@ -3,13 +3,15 @@ import 'firebase/auth';
 
 import movies from '../../components/Movies/movies';
 import userMovies from '../../components/UserMovies/userMovies';
-import watchlist from '../../components/watchlist/watchlist';
+// import watchlist from '../../components/watchlist/watchlist';
 
 const authDiv = document.getElementById('auth');
 const moviesDiv = document.getElementById('movies');
 const movieNavbar = document.getElementById('navbar-button-movies');
 const authNavbar = document.getElementById('navbar-button-auth');
 const logoutNavbar = document.getElementById('navbar-button-logout');
+// const addButton = document.getElementById('add-movies-button');
+// const form = document.getElementById('new-movie');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
@@ -19,15 +21,17 @@ const checkLoginStatus = () => {
       movieNavbar.classList.remove('hide');
       authNavbar.classList.add('hide');
       logoutNavbar.classList.remove('hide');
+      // addButton.classList.remove('hide');
       movies.moviePrint(user.uid);
       userMovies.showMovies();
-      watchlist.newWatchListButton();
+      // watchlist.newWatchListButton();
     } else {
       authDiv.classList.remove('hide');
       moviesDiv.classList.add('hide');
-      movieNavbar.classList.add('hide');
       authNavbar.classList.remove('hide');
       logoutNavbar.classList.add('hide');
+      // addButton.classList.add('hide');
+      movieNavbar.classList.add('hide');
     }
   });
 };
