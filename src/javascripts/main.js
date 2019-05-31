@@ -11,7 +11,6 @@ import AddMovie from './components/UserMovies/userMovies';
 import apiKeys from './helpers/apiKeys.json';
 
 const init = () => {
-  console.error('keys', apiKeys.firebaseKeys);
   firebase.initializeApp(apiKeys.firebaseKeys);
   MyNavbar.navbarEvents();
   authData.checkLoginStatus();
