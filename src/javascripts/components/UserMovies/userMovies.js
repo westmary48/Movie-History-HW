@@ -9,15 +9,22 @@ import movies from '../Movies/movies';
 const createNewMovie = (e) => {
   e.preventDefault();
   const newMovie = {
-    name: document.getElementById('name').value,
+    title: document.getElementById('title').value,
+    genre: document.getElementById('genre').value,
+    imageUrl: document.getElementById('imageUrl').value,
+    movieRatingId: document.getElementById('movieRatingId').value,
     uid: firebase.auth().currentUser.uid,
   };
   moviesData.addNewMovie(newMovie)
     .then(() => {
-      document.getElementById('name').value = '';
+      document.getElementById('genre').value = '';
+      document.getElementById('imageUrl').value = '';
+      document.getElementById('title').value = '';
+      document.getElementById('movieRatingId').value = '';
       document.getElementById('movies').classList.remove('hide');
       document.getElementById('new-movie').classList.add('hide');
       movies.moviePrint(newMovie);
+      console.error('mary', movies.moviePrint(newMovie));
     })
     .catch(err => console.error('no new movie for you', err));
 };

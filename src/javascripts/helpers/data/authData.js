@@ -10,8 +10,6 @@ const moviesDiv = document.getElementById('movies');
 const movieNavbar = document.getElementById('navbar-button-movies');
 const authNavbar = document.getElementById('navbar-button-auth');
 const logoutNavbar = document.getElementById('navbar-button-logout');
-const addMovieBtn = document.getElementById('add-movies-button');
-const card = document.getElementsByClassName('card');
 
 const checkLoginStatus = () => {
   firebase.auth().onAuthStateChanged((user) => {
@@ -30,7 +28,6 @@ const checkLoginStatus = () => {
       movieNavbar.classList.add('hide');
       authNavbar.classList.remove('hide');
       logoutNavbar.classList.add('hide');
-      addMovieBtn.classList.add('hide');
     }
   });
 };
