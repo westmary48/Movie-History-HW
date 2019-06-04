@@ -19,6 +19,7 @@ const moviePrint = (uid) => {
       domString += `<h2>${movie.movieRatingId}</h2>`;
       domString += `<a href="#" id = "${movie.id}" class ="btn btn-info watchList">Watchlist</a>`;
       domString += `<a href="#" id = "${movie.id}" class ="btn btn-info rating">Add Rating</a>`;
+      domString += `<a href="#" id = "${movie.id}" class ="btn btn-danger delete">X</a>`;
       domString += '</div>';
       domString += '</div>';
       domString += '</div>';
