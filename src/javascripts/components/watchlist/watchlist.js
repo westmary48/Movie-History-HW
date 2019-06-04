@@ -4,19 +4,15 @@ import $ from 'jquery';
 
 import watchListData from '../../helpers/data/watchListData';
 import movies from '../Movies/movies';
-// import util from '../../helpers/util';
 
-// const watchListBuilder = () => {
-//   const domstring = '<div>Watchlist</div>';
-//   util.printToDom(domstring, 'userMovies');
-// };
-
-
-// function that adds watchlist to user movies collection and
-// then reprints it to the movie stringBuilder
 const createWatchlist = (e) => {
   const userId = firebase.auth().currentUser.uid;
   const newWatchlist = {
+    title: document.getElementById('title').value,
+    genre: document.getElementById('genre').value,
+    imageUrl: document.getElementById('imageUrl').value,
+    movieRatingId: document.getElementById('movieRatingId').value,
+    // uid: firebase.auth().currentUser.uid,
     rating: 0,
     isWatched: false,
     uid: userId,
