@@ -2,6 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 import moviesData from '../../helpers/data/moviesData';
+import userMovieData from '../../helpers/data/userMovieData';
 
 import util from '../../helpers/util';
 import movies from '../Movies/movies';
@@ -35,10 +36,37 @@ const newMovieButton = () => {
   document.getElementById('saveNewMovie').addEventListener('click', createNewMovie);
 };
 
+
+const deleteMoviesEvent = (e) => {
+  const getMovieByUid = moviesData.getMovieByUid();
+  const movieId = e.target.id;
+  moviesData.deleteMovie(movieId)
+    .then(() => getMovieByUid(firebase.auth().currentUser.uid)) // eslint-disable-line no-use-before-define
+    .catch(error => console.error('delete does not work', error));
+};
+
+const addEvents = () => {
+  document.getElementById('add-movies-button').addEventListener('click', newMovieButton);
+  const deleteButtons = document.getElementsByClassName('delete-friend');
+  for (let i = 0; i < deleteButtons.length; i += 1) {
+    deleteButtons[i].addEventListener('click', deleteMoviesEvent);
+  }
+};
 const showMovies = () => {
   const domString = '<button id="add-movies-button" class="btn btn-info">Add Movie</button>';
   util.printToDom('userMovie', domString);
   document.getElementById('add-movies-button').addEventListener('click', newMovieButton);
 };
 
-export default { showMovies };
+
+const getMovies = (uid) => {
+  userMovieData.getUserMoviesByUid(uid)
+    .then((userMovies) => {
+      movies.getMovieByUid(uid).then((userMovie) => {
+        showMovies(userMovie.id);
+      });
+    })
+    .catch(err => console.error('no friends', err));
+};
+
+export default { showMovies, getMovies };
